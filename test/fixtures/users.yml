@@ -1,0 +1,14 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+user:
+  id: 2
+  login: testAdmin
+  password_hash: $2a$10$49L.ewqzhCLwTGrR7aWyle8Ka0eO6oSctAltFGaNou/k6SSSxQxTe
+  password_salt: $2a$10$49L.ewqzhCLwTGrR7aWyle
+
+admin:
+  id: 1
+  login: marsAdmin
+  password_hash: $2a$10$MvpuiPFswrozK2hnF2pKnuGGut.EtnUmDGUHUjiXBsXgnQw4GLyHS
+  password_salt: $2a$10$MvpuiPFswrozK2hnF2pKnu
+  

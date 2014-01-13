@@ -1,0 +1,11 @@
+<h1>FTP-server <%= @ftp_server.id %></h1>
+<table class="table table-striped">
+  <tr><td>Url:</td><td><%= @ftp_server.url %></td></tr>
+  <tr><td>Port:</td><td><%= @ftp_server.port %></td></tr>
+  <tr><td>Username:</td><td><%= @ftp_server.username %></td></tr>
+  <tr><td>Password:</td><td><%= @ftp_server.password %></td></tr>
+</table>
+
+<%= link_to 'Back', user_firm_ftp_servers_path, class: "btn btn-primary" %>
+<%= link_to 'Edit', edit_user_firm_ftp_server_path, class: "btn btn-primary" %>
+<%= link_to 'Delete', user_firm_ftp_server_path, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-primary btn-danger" %>    

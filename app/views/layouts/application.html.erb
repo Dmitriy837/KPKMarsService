@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KPKMarsService</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <div id="user_nav">
+          <% if current_user %>
+            <span id="header_text">Logged in as <%= current_user.login %></span>.
+            <%= link_to "Log out", log_out_path %>
+          <% else %>
+            <%= link_to "log in", log_in_path %>
+          <% end %>
+          <br />
+          <%= link_to "HOME", root_path	%>
+          <% if @user && @firm %>
+            <% if session[:user_id] == 1 %>|
+              <%= link_to @user.login, user_path(@user) %>
+            <% end %>
+            <% if @ftp_servers || @devices || @ftp_server || @device || @parameters || @parameter %>|
+              <%= link_to @firm.description, user_firm_path(@user, @firm) %>
+                <% if @ftp_server %>|
+                  <%= link_to 'FTP-servers', user_firm_ftp_servers_path(@user, @firm) %>
+                <% end %>
+                <% if @device %>|
+                  <%= link_to 'Devices', user_firm_devices_path(@user, @firm) %>
+                <% end %>
+                <% if @parameter %>|
+                  <%= link_to 'Parameters', user_firm_parameters_path(@user, @firm) %>
+                <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
+<div class="container">
+  <%= yield %>
+</div>
+</body>
+</html>

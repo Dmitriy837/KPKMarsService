@@ -1,0 +1,13 @@
+<h1>Hello, <%= @user.login %>!</h1>
+<% if admin? %>
+  <%= render 'mars_admin' %>
+<% else %>
+<h3>Your firms:</h3>
+<ul>
+  <% @user.firms.each do |f| %>
+    <li><%= link_to f.description, user_firm_path(@user, f) %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= link_to 'Settings', edit_user_path(@user) , class: "btn btn-primary"  %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+mars_device:
+  imei: mars_device
+  last_date: 1014000
+  firm_id: 1
+
+device:
+  imei: device_imei
+  last_date: 20141231
+  firm_id: 2

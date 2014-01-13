@@ -1,0 +1,8 @@
+<h1>Parameter <%= @parameter.id %></h1>
+<table class="table table-striped">
+<tr><td>Name:</td><td><%= @parameter.param_name %></td></tr>
+<tr><td>Value:</td><td><%= @parameter.param_value %></td></tr>
+</table>
+<%= link_to 'Back', user_firm_parameters_path, :class => "btn btn-primary" %>
+<%= link_to 'Edit', edit_user_firm_parameter_path, :class => "btn btn-primary" %>
+<%= link_to 'Delete', user_firm_parameter_path(@user, @firm, @parameter), method: :delete, data: { confirm: 'Are you sure?'}, :class => "btn btn-primary btn-danger" %>    

@@ -1,0 +1,14 @@
+<h1>Parameters</h1>
+<table class="table table-striped">
+<% @parameters.each do |p| %>
+  <tr>
+    <td><%= p.id %></td>
+    <td><%= link_to p.param_name, user_firm_parameter_path(@user, @firm, p) %></td>
+    <td><%= link_to 'Edit', edit_user_firm_parameter_path(@user, @firm, p), :class => 'btn btn-mini' %></td>
+    <td><%= link_to 'Delete', user_firm_parameter_path(@user, @firm, p) , data: { confirm: 'Are you sure?'}, method: :delete, :class => 'btn btn-mini btn-danger' %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to "Back", user_firm_path(@user, @firm), :class => "btn btn-primary" %>
+<%= link_to "Add parameter" , new_user_firm_parameter_path, :class => "btn btn-primary" %>

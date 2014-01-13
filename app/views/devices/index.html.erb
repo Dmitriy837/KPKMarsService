@@ -1,0 +1,16 @@
+<h1>Devices</h1>
+<table class="table table-striped">
+<% @devices.each do |d| %>
+  <tr>
+    <td><%= d.id %></td>
+    <td><%= link_to d.imei, user_firm_device_path(@user, @firm, d) %></td>
+    <td><%= link_to 'Edit', edit_user_firm_device_path(@user, @firm, d), class: 'btn btn-mini' %></td>
+    <td><%= link_to 'Delete', user_firm_device_path(@user, @firm, d) , data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-mini btn-danger' %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to "Back", user_firm_path(@user, @firm), class: "btn btn-primary" %>
+<% if @firm.license_count > 0 %>
+  <%= link_to "Add device (#{@firm.license_count} more)" , new_user_firm_device_path, class: "btn btn-primary" %>
+<% end %>

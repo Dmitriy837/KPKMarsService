@@ -1,0 +1,9 @@
+<h1>Device <%= @device.id %></h1>
+<table class="table table-striped">
+<tr><td>IMEI:</td><td><%= @device.imei %></td></tr>
+<% ldate = @device.last_date.to_s %>
+<tr><td>Expiring_date:</td><td><%= "#{ldate[6,2]}/#{ldate[4,2]}/#{ldate[0,4]}" %></td></tr>
+</table>
+<%= link_to 'Back', user_firm_devices_path, class: "btn btn-primary" %>
+<%= link_to 'Edit', edit_user_firm_device_path, class: "btn btn-primary" %>
+<%= link_to 'Delete', user_firm_device_path, method: :delete, data:{ confirm: 'Are you sure?'}, class: "btn btn-primary btn-danger" %>    

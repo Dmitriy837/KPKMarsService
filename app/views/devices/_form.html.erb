@@ -1,0 +1,28 @@
+<%= form_for([@user,@firm,@device]) do |f| %>
+  <% if @device.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @device.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+    <div class="control-group">
+      <%= f.label :imei, :class => 'control-label' %>
+      <%= f.text_field :imei, :class => 'text-field', :required => true, :title => "IMEI can't be blank" %>
+    </div>
+    <% if admin? %>
+      <div class="control-group">
+        <%= f.label :last_date, :class => 'control-label' %>
+        <%= f.date_select :last_date, :selected => @device.last_date.to_s.to_date || Date.today, :start_year => Date.today.year ,:end_year => 4000, max_years_allowed: 4000, :class => 'text-field' %>
+      </div>
+    <% end %>
+    <div class="form-actions">
+      <%= f.submit %>
+    </div>
+  </fieldset>
+<% end %>
+

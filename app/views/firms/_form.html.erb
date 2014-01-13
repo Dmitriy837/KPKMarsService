@@ -1,0 +1,26 @@
+<%= form_for([@user,@firm]) do |f| %>
+  <% if @firm.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @firm.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+    <div class="control-group">
+      <%= f.label :description, class: 'control-label' %>
+      <%= f.text_field :description, class: 'text-field', required: true, title: "Description can't be blank" %>
+    </div>
+    <div class="control-group">
+      <%= f.label :license_count, :class => 'control-label' %>
+      <%= f.number_field :license_count, class: 'text-field', required: true, pattern: "\\d+", title: "License must be a number" %>
+    </div>
+    <div class="form-actions">
+      <%= f.submit %>
+    </div>
+  </fieldset>
+<% end %>
+

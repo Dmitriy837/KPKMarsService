@@ -1,0 +1,14 @@
+<h1>FTP-servers</h1>
+<table class="table table-striped">
+<% @ftp_servers.each do |s| %>
+  <tr>
+    <td><%= s.id %></td>
+    <td><%= link_to "#{s.url}: #{s.port}", user_firm_ftp_server_path(@user,@firm,s) %></a></td>
+    <td><%= link_to "Edit", edit_user_firm_ftp_server_path(@user,@firm,s), class: 'btn btn-mini' %></a></td>
+    <td><%= link_to 'Delete', user_firm_ftp_server_path(@user,@firm,s) , data: { confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-mini btn-danger' %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to "Back", user_firm_path(@user, @firm), class: "btn btn-primary" %>
+<%= link_to "Add FTP-server" , new_user_firm_ftp_server_path, class: "btn btn-primary" %>

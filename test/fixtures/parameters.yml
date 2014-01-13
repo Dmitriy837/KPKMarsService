@@ -1,0 +1,6 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+param:
+  param_name: param_name
+  param_value: param_value
+  firm_id: 2

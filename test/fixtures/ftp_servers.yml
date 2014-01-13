@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+mars_server:
+  url: 10.222.0.105
+  port: 8080
+  username: username
+  password: password
+  firm_id: 1
+
+server:
+  url: 127.0.0.1
+  port: 80564
+  username: usesrname
+  password: password
+  firm_id: 2

@@ -1,0 +1,12 @@
+<h1><%= @firm.description %></h1>
+  <%= link_to 'Registered devices', user_firm_devices_path(@user,@firm) %><br />
+  <%= link_to 'Registered FTP-servers', user_firm_ftp_servers_path(@user,@firm) %><br />
+  <br />
+  <%= link_to 'Back', admin? ?user_path(@user):root_url, class: "btn btn-primary" %>
+  <% if admin? %>
+    <%= link_to 'Parameters', user_firm_parameters_path(@user, @firm), class: "btn btn-primary" %>
+    <%= link_to 'Edit', edit_user_firm_path(@user, @firm), class: "btn btn-primary" %>
+    <%= link_to 'Delete', user_firm_path(@user, @firm), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-primary btn-danger" %>    
+  <% end %>
+  
+
