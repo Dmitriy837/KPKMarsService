@@ -2,3 +2,16 @@
 
 This project just demonstrates my basic skills in Ruby on Rails,
 so everything I have to say is just thanks for your attention!
+
+We have several users, each user can have many firms, each firm allowed register as many ftp-servers, as they need, and only license_count devices. Also firms have parameters, but only admin can work with them.
+Admin is user with id 1. 
+The code look even uglier, then it could because of unnatural requirment to store last_date as an integer number, but present in interface with date selectors.
+
+User stories for the project can be found in features/ directory and run with following commands:
+  bundle exec rake (also runs rspec)
+  or
+  bundle exec cucumber
+ 
+Unit tests mostly are in test/controllers directory and run with
+  bundle exec rake test:controllers
+  command.
