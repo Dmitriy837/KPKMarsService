@@ -9,7 +9,7 @@
 connection = ActiveRecord::Base.connection
 ActiveRecord::Base.connection.execute("
 
-INSERT INTO `users` (`id`, `login`, `password_hash`, `password_salt`) VALUES
+INSERT INTO users (id, login, password_hash, password_salt) VALUES
 (1,'admin', '$2a$10$3VejRP355hX/Ucs809uZf.iaW9ViOLlTsCt1rUDGXP3DQT4x0PEmi', '$2a$10$3VejRP355hX/Ucs809uZf.'),
 (2,'testAdmin', '$2a$10$3VejRP355hX/Ucs809uZf.iaW9ViOLlTsCt1rUDGXP3DQT4x0PEmi', '$2a$10$3VejRP355hX/Ucs809uZf.')
 ")
