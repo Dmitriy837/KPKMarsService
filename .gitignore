@@ -15,5 +15,5 @@
 /log/*.log
 /tmp
 #Uncomment before deploying in production
-#/config/initializers/secret_token.rb
+/config/initializers/secret_token.rb
 .kateproject*
