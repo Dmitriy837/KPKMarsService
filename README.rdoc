@@ -17,4 +17,4 @@ User stories for the project can be found in features/ directory and run with fo
 Unit tests mostly are in test/controllers directory and can be run with
   bundle exec rake test:controllers
   
-  command.
+command.
