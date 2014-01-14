@@ -14,5 +14,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-/config/initializers/secret_token.rb
+#Uncomment before deploying in production
+#/config/initializers/secret_token.rb
 .kateproject*
